@@ -1,9 +1,5 @@
 # Rust Learning Notes
 
-Personal notes while learning Rust from [The Rust Book](https://doc.rust-lang.org/book/).
-
----
-
 ## Installation
 
 ```bash
