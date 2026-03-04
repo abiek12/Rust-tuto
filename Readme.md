@@ -1,4 +1,4 @@
-# Rust Learning Notes
+# Rust Notes
 
 ## Installation
 
