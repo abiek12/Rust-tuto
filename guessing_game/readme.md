@@ -132,6 +132,38 @@ loop {
 
 ---
 
+## The Prelude
+
+In the guessing game you had to explicitly import `io` and `Ordering`:
+
+```rust
+use std::io;
+use std::cmp::Ordering;
+```
+
+But you never had to import `String`, `Vec`, `Option`, or `Result` — they just worked. That's because of the **prelude**.
+
+The prelude is a small set of items Rust **automatically imports into every program**. Things like:
+
+- `String`, `Vec`
+- `Option` (`Some`, `None`)
+- `Result` (`Ok`, `Err`)
+- `println!`, `panic!`
+
+Anything **not** in the prelude needs an explicit `use`:
+
+```rust
+use std::io;            // not in prelude
+use std::cmp::Ordering; // not in prelude
+use rand::Rng;          // external crate, always needs use
+```
+
+> Prelude = stuff Rust loads automatically so you don't have to import the most common things every single time.
+
+Full list → [std::prelude](https://doc.rust-lang.org/std/prelude/index.html)
+
+---
+
 ## Key Takeaways
 
 | Concept   | What it means                                  |
