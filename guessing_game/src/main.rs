@@ -17,6 +17,7 @@ fn main() {
         let guess: u32 = guess.trim().parse().expect("Failed to parse user input!"); // Shadowing the guess variable
         println!("You guessed: {guess}");
 
+        // simmilar to switch statement
         match guess.cmp(&secret_number) {
             cmp::Ordering::Less => println!("Too small!"),
             cmp::Ordering::Greater => println!("Too big!"),
