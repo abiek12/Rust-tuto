@@ -9,12 +9,19 @@ fn main() {
 
     loop {
         println!("Please input your guess.");
-
         let mut guess: String = String::new();
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read input!");
-        let guess: u32 = guess.trim().parse().expect("Failed to parse user input!"); // Shadowing the guess variable
+
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Please enter a valid number!");
+                continue;
+            }
+        }; // Shadowing the guess variable
+
         println!("You guessed: {guess}");
 
         // simmilar to switch statement
