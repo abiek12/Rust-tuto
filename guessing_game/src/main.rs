@@ -14,10 +14,10 @@ fn main() {
         io::stdin()
             .read_line(&mut guess)
             .expect("Failed to read input!");
-        let guess_number: u32 = guess.trim().parse().expect("Failed to parse user input!");
+        let guess: u32 = guess.trim().parse().expect("Failed to parse user input!"); // Shadowing the guess variable
         println!("You guessed: {guess}");
 
-        match guess_number.cmp(&secret_number) {
+        match guess.cmp(&secret_number) {
             cmp::Ordering::Less => println!("Too small!"),
             cmp::Ordering::Greater => println!("Too big!"),
             cmp::Ordering::Equal => {
